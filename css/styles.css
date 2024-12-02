@@ -35,12 +35,31 @@ body{
     flex-direction: column;
     font-family: "Outfit", serif;
 }
+.img_box{
+    position: relative;
+    border-radius: 1rem;
+}
+.eye-of-h{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    top: 0;
+    left: 0;
+}
+.eye-of-horus{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
 .box_img{
-    height: auto;
+    position: relative;
+    display: block;
+    height: 100%;
     width: 100%;
     border-radius: 1rem;
-    padding-top: 0.4rem;
-    margin-bottom: 1rem;
 }
 h1{
     font-weight: bold;
@@ -80,18 +99,30 @@ hr{
     border: 3px solid var(--WHITE);
     border-radius: 50%;
 }
-span{
+.span{
     color: var(--WHITE);
 }
 .cyan{
     color: var(--CYAN);
 }
-
-h1:active{
-    color: var(--CYAN);
+.img_box:hover{
+    cursor: pointer;
 }
-span:active{
+.img_box:hover .box_img{
+    z-index: 1;
+    background-color: hsla(178, 100%, 50%, 0.100);
+}
+.img_box:hover .eye-of-h{
+    z-index: 1;
+    background-color: hsla(178, 100%, 50%, 0.400);
+}
+h1:active, h1:hover{
     color: var(--CYAN);
+    cursor: pointer;
+}
+.span:active,.span:hover{
+    color: var(--CYAN);
+    cursor: pointer;
 }
 
 @media (min-width: 600px) {
